@@ -1,5 +1,8 @@
 class Account:
-    __money = 10000  # (私有)物件屬性/變數/資產
+    __money = 0  # (私有)物件屬性/變數/資產
+
+    def __init__(self, x) -> None:  # 建構式
+        self.__money = x  # 開戶時所存的第一筆金額
 
     def save(self, x):
         print("存款: $" + str(x))
@@ -23,7 +26,7 @@ class Account:
 
 
 if __name__ == '__main__':
-    account1 = Account()  # 建立一個物件
+    account1 = Account(30000)  # 建立一個物件
     print(account1)
     account1.withdraw(6000)
     print(account1)
