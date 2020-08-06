@@ -73,6 +73,7 @@ while True:
     print('3. 提款')
     print('4. 轉帳')
     print('5. 開戶')
+    print('6. 解約')
     print('9. 離開')
     print('----------')
     no = int(input('請選擇(1~9): '))
