@@ -1,25 +1,25 @@
 class Account:
-    money = 10000  # 物件屬性/變數/資產
+    __money = 10000  # (私有)物件屬性/變數/資產
 
     def save(self, x):
         print("存款: $" + str(x))
         if x <= 0:
             print('提款金額必須 > 0')
             return
-        self.money = self.money + x
+        self.__money = self.__money + x
 
     def withdraw(self, x):  # x 表示要提款的金額
         print("提款: $" + str(x))
         if x <= 0:
             print('提款金額必須 > 0')
             return
-        if x > self.money:
+        if x > self.__money:
             print('提款金額過大, 餘額不足')
             return
-        self.money = self.money - x
+        self.__money = self.__money - x
 
     def __str__(self) -> str:
-        return "帳戶餘額: $" + str(self.money)
+        return "帳戶餘額: $" + str(self.__money)
 
 
 if __name__ == '__main__':
