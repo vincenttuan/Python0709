@@ -1,3 +1,4 @@
+import os
 import atm.Account as act
 # 主程式
 act1 = act.Account(1000)
@@ -32,5 +33,6 @@ while True:
         pass
     elif no == 5:
         break
+    os.system('pause') # 暫停(按下任意見後繼續...)
 
 print('程式結束')
