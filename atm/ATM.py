@@ -8,19 +8,19 @@ list = [{"john": act1}, {"mary": act2}, {"tom": act3}]
 
 # 列出所有人的帳戶餘額
 def display():
-    for act in list:
-        for key in act.keys():
-            print(key, act.get(key))
+    for dict in list:
+        for key in dict.keys():
+            print(key, dict.get(key))
 
 def save():
     actName = input('請輸入存款人: ')
     x = int(input('請輸入存款金額: '))
     # 得到存款人的account物件
     account = None
-    for act in list:
-        for key in act.keys():
+    for dict in list:
+        for key in dict.keys():
             if key == actName:
-                account = act.get(key)
+                account = dict.get(key)
     if account == None:
         print('查無此人')
     else:
@@ -31,10 +31,10 @@ def withdraw():
     x = int(input('請輸入提款金額: '))
     # 得到提款人的account物件
     account = None
-    for act in list:
-        for key in act.keys():
+    for dict in list:
+        for key in dict.keys():
             if key == actName:
-                account = act.get(key)
+                account = dict.get(key)
     if account == None:
         print('查無此人')
     else:
@@ -46,12 +46,12 @@ def transfer():
     x = int(input('請輸入轉帳金額: '))
     fromAccount = None
     toAccount = None
-    for act in list:
-        for key in act.keys():
+    for dict in list:
+        for key in dict.keys():
             if key == fromName:
-                fromAccount = act.get(key)
+                fromAccount = dict.get(key)
             if key == toName:
-                toAccount = act.get(key)
+                toAccount = dict.get(key)
     if fromAccount == None or toAccount == None:
         print('查無此人')
     else:
