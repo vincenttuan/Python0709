@@ -6,12 +6,13 @@ act2 = act.Account(1000)
 act3 = act.Account(1000)
 list = [{"john": act1}, {"mary": act2}, {"tom": act3}]
 
-# 列出所有人的帳戶餘額
+# 查詢
 def display():
     for dict in list:
         for key in dict.keys():
             print(key, dict.get(key))
 
+# 存款
 def save():
     actName = input('請輸入存款人: ')
     x = int(input('請輸入存款金額: '))
@@ -26,6 +27,7 @@ def save():
     else:
         account.save(x)
 
+# 提款
 def withdraw():
     actName = input('請輸入提款人: ')
     x = int(input('請輸入提款金額: '))
@@ -40,6 +42,7 @@ def withdraw():
     else:
         account.withdraw(x)
 
+# 轉帳
 def transfer():
     fromName = input('請輸入轉帳人(from): ')
     toName   = input('請輸入被轉帳人(to): ')
@@ -57,6 +60,7 @@ def transfer():
     else:
         fromAccount.transfer(x, toAccount)
 
+# 開戶
 def createAccount():
     accountName = input('請輸入開戶人名稱: ')
     x = int(input('請輸入開戶金額: $'))
@@ -64,6 +68,7 @@ def createAccount():
     dict = {accountName: account}
     list.append(dict)
 
+# 解約
 def cancelAccount():
     cancelName = input('請輸入解約人: ')
     cancelDict = None
