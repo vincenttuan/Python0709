@@ -4,6 +4,9 @@ class Account:
     def __init__(self, x) -> None:
         self.__money = x
 
+    def getMoney(self):
+        return self.__money
+
     def save(self, x):
         self.__money += x
 

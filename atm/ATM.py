@@ -64,6 +64,20 @@ def createAccount():
     dict = {accountName: account}
     list.append(dict)
 
+def cancelAccount():
+    cancelName = input('請輸入解約人: ')
+    cancelAccount = None
+    for act in list:
+        for key in act.keys():
+            if key == cancelName:
+                cancelAccount = act.get(key)
+    if cancelAccount == None:
+        print('查無此人')
+    else:
+        list.remove(cancelAccount)
+        print('解約人: ' + cancelName + ', 解約金: $' + cancelAccount.getMoney())
+
+
 # 系統選單
 while True:
     print('系統選單:')
@@ -87,6 +101,8 @@ while True:
         transfer()
     elif no == 5:
         createAccount()
+    elif no == 6:
+        cancelAccount()
     elif no == 9:
         break
     os.system('pause') # 暫停(按下任意見後繼續...)
