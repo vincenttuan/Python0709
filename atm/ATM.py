@@ -57,6 +57,13 @@ def transfer():
     else:
         fromAccount.transfer(x, toAccount)
 
+def createAccount():
+    accountName = input('請輸入開戶人名稱: ')
+    x = int(input('請輸入開戶金額: $'))
+    account = act.Account(x)
+    dict = {accountName: account}
+    list.append(dict)
+
 # 系統選單
 while True:
     print('系統選單:')
@@ -65,9 +72,10 @@ while True:
     print('2. 存款')
     print('3. 提款')
     print('4. 轉帳')
-    print('5. 離開')
+    print('5. 開戶')
+    print('9. 離開')
     print('----------')
-    no = int(input('請選擇(1~5): '))
+    no = int(input('請選擇(1~9): '))
     if no == 1:
         display()
     elif no == 2:
@@ -77,6 +85,8 @@ while True:
     elif no == 4:
         transfer()
     elif no == 5:
+        createAccount()
+    elif no == 9:
         break
     os.system('pause') # 暫停(按下任意見後繼續...)
 
