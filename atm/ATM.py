@@ -27,7 +27,18 @@ def save():
         account.save(x)
 
 def withdraw():
-    pass
+    actName = input('請輸入提款人: ')
+    x = int(input('請輸入提款金額: '))
+    # 得到提款人的account物件
+    account = None
+    for act in list:
+        for key in act.keys():
+            if key == actName:
+                account = act.get(key)
+    if account == None:
+        print('查無此人')
+    else:
+        account.withdraw(x)
 
 def transfer():
     pass

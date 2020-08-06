@@ -7,6 +7,9 @@ class Account:
     def save(self, x):
         self.__money += x
 
+    def withdraw(self, x):
+        self.__money -= x
+
     def __str__(self) -> str:
         return "帳戶餘額: $" + str(self.__money)
 
