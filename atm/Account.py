@@ -10,6 +10,11 @@ class Account:
     def withdraw(self, x):
         self.__money -= x
 
+    def transfer(self, x, target):
+        self.withdraw(x)
+        target.save(x)
+        pass
+
     def __str__(self) -> str:
         return "帳戶餘額: $" + str(self.__money)
 
