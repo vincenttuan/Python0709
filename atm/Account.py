@@ -10,9 +10,9 @@ class Account:
     def withdraw(self, x):
         self.__money -= x
 
-    def transfer(self, x, target):
+    def transfer(self, x, to):
         self.withdraw(x)
-        target.save(x)
+        to.save(x)
         pass
 
     def __str__(self) -> str:

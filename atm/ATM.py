@@ -41,7 +41,21 @@ def withdraw():
         account.withdraw(x)
 
 def transfer():
-    pass
+    fromName = input('請輸入轉帳人(from): ')
+    toName   = input('請輸入被轉帳人(to): ')
+    x = int(input('請輸入轉帳金額: '))
+    fromAccount = None
+    toAccount = None
+    for act in list:
+        for key in act.keys():
+            if key == fromName:
+                fromAccount = act.get(key)
+            if key == toName:
+                toAccount = act.get(key)
+    if fromAccount == None or toAccount == None:
+        print('查無此人')
+    else:
+        fromAccount.transfer(x, toAccount)
 
 # 系統選單
 while True:
