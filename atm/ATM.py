@@ -13,8 +13,8 @@ def display():
             print(key, act.get(key))
 
 def save():
-    actName = input('請輸入存款人')
-    x = int(input('請輸入存款金額'))
+    actName = input('請輸入存款人: ')
+    x = int(input('請輸入存款金額: '))
     # 得到存款人的account物件
     account = None
     for act in list:
