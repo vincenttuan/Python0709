@@ -20,6 +20,7 @@ class Student(Human):
 
 if __name__ == '__main__' :
     st = Student('John', 18, '男', 1, '一年級')
+    print(st.name)
     print(st)
 
 
