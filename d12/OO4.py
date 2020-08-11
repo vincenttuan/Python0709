@@ -18,4 +18,11 @@ class BMI:
 
 
 if __name__ == '__main__':
-    pass
+    file = open('student.txt', 'r')
+    for student in file.readlines():
+        rows = student.split(",")
+        name = rows[0].strip()  # strip() 去除左右空白
+        h = float(rows[1].strip())
+        w = float(rows[2].strip())
+        b = BMI(name, h, w)
+        print(b)
