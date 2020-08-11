@@ -30,7 +30,7 @@ if __name__ == '__main__':
         ord = Order(rows[0],rows[1],rows[2],rows[3],rows[4],rows[5],rows[6],rows[7],rows[8],rows[9],rows[10],rows[11],rows[12],rows[13])
         list.append(ord)
 
-    # 列出 物品種類
+    # 列出
     for ord in list:
-        if float(ord.totalRevenue) > 6600000:
-            print(ord.itemType, ord.totalRevenue)
+        if ord.country == 'Taiwan' and ord.itemType == 'Household':
+            print(ord.country, ord.itemType, ord.totalProfit, end='')
