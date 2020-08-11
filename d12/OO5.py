@@ -24,9 +24,9 @@ if __name__ == '__main__':
     file = open('10000 Sales Records.csv', 'r')
     list = []
     for data in file.readlines():
-        rows = data.split(",")
-        if rows[0] == 'Region':
+        if data.__contains__('Region'):
             continue
+        rows = data.split(",")
         ord = Order(rows[0],rows[1],rows[2],rows[3],rows[4],rows[5],rows[6],rows[7],rows[8],rows[9],rows[10],rows[11],rows[12],rows[13])
         list.append(ord)
 
