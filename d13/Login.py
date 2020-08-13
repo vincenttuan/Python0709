@@ -5,7 +5,6 @@ class LoginException(Exception):
     def __str__(self) -> str:
         return "登入錯誤原因:" + self.message
 
-
 users = [
     {'name': 'john', 'password': '4321'},
     {'name': 'admin', 'password': '1234'},
