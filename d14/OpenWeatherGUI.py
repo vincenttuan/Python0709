@@ -10,10 +10,11 @@ def update():
     temp = ow['main']['temp'] - 273.15
     feels_like = ow['main']['feels_like'] - 273.15
     humidity = ow['main']['humidity']
-    ans.set("氣溫: %.2f\n體感: %.2f\n濕度: %.2f" % (temp, feels_like, humidity))
+    weatherMain = ow['weather'][0]['main']
+    ans.set("氣溫: %.2f°C\n體感: %.2f°C\n濕度: %.2f%%\n%s" % (temp, feels_like, humidity, weatherMain))
 
 win = tkinter.Tk()
-win.title("My OpenWeather")
+win.title("Taoyuan(桃園)天氣")
 win.geometry("300x200")
 
 ans = tkinter.StringVar()
