@@ -17,6 +17,8 @@ def inputNumber():
         return
     else:
         print(x, '/', y, '=', z)
+    finally:
+        print('我一定要執行')
 
 if __name__ == '__main__':
     inputNumber()
