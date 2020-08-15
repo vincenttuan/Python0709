@@ -12,7 +12,6 @@ while True:
     #print(ret, frame)
     # 取得灰階圖樣
     gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-
     # 偵測臉
     faces = face_cascade.detectMultiScale(
         gray,  # 待檢測圖片，一般為灰度圖像加快檢測速度
@@ -22,6 +21,10 @@ while True:
         flags=cv2.CASCADE_SCALE_IMAGE
     )
     print(faces)
+    # 繪製臉的範圍
+    for (x, y, w, h) in faces:
+        cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 5)
+
     # 顯示影像
     cv2.imshow('Tuan', frame)
     # 按下 q 離開迴圈
