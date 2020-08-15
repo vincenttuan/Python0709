@@ -9,7 +9,7 @@ cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 while True:
     ret, frame = cap.read()
-    print(ret, frame)
+    #print(ret, frame)
     # 取得灰階圖樣
     gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
 
@@ -21,7 +21,7 @@ while True:
         minSize=(30, 30),  # 設定數據搜尋的最小尺寸 ，如 minSize=(30,30)
         flags=cv2.CASCADE_SCALE_IMAGE
     )
-
+    print(faces)
     # 顯示影像
     cv2.imshow('Tuan', frame)
     # 按下 q 離開迴圈
