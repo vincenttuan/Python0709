@@ -9,7 +9,7 @@ eye_cascade = cv2.CascadeClassifier('./xml/haarcascade_eye.xml')
 smile_cascade = cv2.CascadeClassifier('./xml/haarcascade_smile.xml')
 
 # 設定攝像鏡頭
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 # 設定捕捉區域
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
