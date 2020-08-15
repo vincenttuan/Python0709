@@ -13,7 +13,7 @@ while True:
     # 捕捉 frame-by-frame
     ret, frame = cap.read()
 
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
 
     # 畫出每一個臉的範圍
     faces = face_cascade.detectMultiScale(
