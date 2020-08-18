@@ -80,6 +80,20 @@ if __name__ == '__main__':
         print(label)
 
         # 7.判斷評估值 <= Config.POSITIVE_THRESHOLD
+        if label[1] <= A_參數設定.POSITIVE_THRESHOLD:
+            # 印出辨識成功
+            print('辨識成功 opencv_faceid!')
+            for (x, y, w, h) in faces:
+                # 繪文字
+                cv2.putText(frame, 'OK', (x, y - 7), 16, 1.2, (0, 255, 0), 2)
+            # 跳出循環偵測回圈
+            # break
+        else:
+            # 印出辨識失敗
+            print('辨識失敗 opencv_faceid!')
+            for (x, y, w, h) in faces:
+                # 繪文字
+                cv2.putText(frame, 'Error', (x, y - 7), 16, 1.2, (0, 255, 0), 2)
 
         # 結束辨識程序...end
 
