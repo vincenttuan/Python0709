@@ -1,10 +1,12 @@
 import tkinter
+from firebase import firebase
+firebase = firebase.FirebaseApplication('https://iotfb-fc0b9.firebaseio.com/', None)
 
 def openTheDoor():
-    pass
+    result = firebase.patch('/myhouse', {'open': 1})
 
 def closeTheDoor():
-    pass
+    result = firebase.patch('/myhouse', {'open': 0})
 
 win = tkinter.Tk()
 win.title("Door Open")
