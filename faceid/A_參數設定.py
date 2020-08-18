@@ -1,7 +1,7 @@
 import cv2
 
 # 訓練對象人名 ?
-MY_NAME = 'your_name'
+MY_NAME = 'tuan'
 
 # 定義均值圖檔檔名
 MEAN_FILE = './training/mean.png'

@@ -57,17 +57,27 @@ if __name__ == '__main__':
         # 開始辨識程序...begin
 
         # 1.判斷是否為單一人臉的圖片
-
+        result = A_參數設定.detect_single(gray, face_cascade)
 
         # 2.判斷 result 有無回傳值
+        if result is None:
+            print('無法偵測到單一人臉 opencv_faceid !')
+            # 將 frame 顯示
+            cv2.imshow('Detect face', frame)
+            # 重新偵測
+            continue
 
         # 3.取得欲裁切的資料
+        x, y, w, h = result
 
         # 4.進行裁切放人臉圖片
+        crop = A_參數設定.resize(A_參數設定.crop(gray, x, y, w, h))
 
         # 5.進行比對檢驗評估
+        label = model.predict(crop)
 
         # 6.列印評估資訊
+        print(label)
 
         # 7.判斷評估值 <= Config.POSITIVE_THRESHOLD
 
