@@ -1,5 +1,6 @@
 # 匯入所需程式庫
 import cv2
+from firebase import firebase
 from faceid import A_參數設定
 
 # 載入 Config.HAAR_FACES 指定的層疊分類器
@@ -86,6 +87,9 @@ if __name__ == '__main__':
             for (x, y, w, h) in faces:
                 # 繪文字
                 cv2.putText(frame, 'OK', (x, y - 7), 16, 1.2, (0, 255, 0), 2)
+            # 將開門資料送入 firebase
+            firebase = firebase.FirebaseApplication('https://iotfb-fc0b9.firebaseio.com/', None)
+            result = firebase.patch('/myhouse', {'open': 1})
             # 跳出循環偵測回圈
             break
         else:
