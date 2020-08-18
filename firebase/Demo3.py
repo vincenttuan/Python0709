@@ -12,10 +12,10 @@ win.geometry("300x100")
 
 openButton = tkinter.Button(win, text="Open", command=openTheDoor)
 openButton.config(font=("Arial", 20))
-openButton.pack(tkinter.LEFT)
+openButton.pack(side=tkinter.LEFT)
 
 closeButton = tkinter.Button(win, text="Open", command=closeTheDoor)
 closeButton.config(font=("Arial", 20))
-closeButton.pack(tkinter.RIGHT)
+closeButton.pack(side=tkinter.RIGHT)
 
 win.mainloop()
