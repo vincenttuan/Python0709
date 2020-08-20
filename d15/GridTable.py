@@ -16,12 +16,12 @@ btn6 = ttk.Button(win, text='6', style='My.TButton')
 win.rowconfigure((0, 1), weight=1)  # row 同步放大縮小
 win.columnconfigure((0, 1, 2), weight=1)  # column 同步放大縮小
 
-btn1.grid(row=0, column=0, columnspan=1, sticky='EWNS')
-btn2.grid(row=0, column=1, columnspan=1, sticky='EWNS')
-btn3.grid(row=0, column=2, columnspan=1, sticky='EWNS')
-btn4.grid(row=1, column=0, columnspan=1, sticky='EWNS')
-btn5.grid(row=1, column=1, columnspan=1, sticky='EWNS')
-btn6.grid(row=1, column=2, columnspan=1, sticky='EWNS')
+btn1.grid(row=0, column=0, columnspan=1, rowspan=1, sticky='EWNS')
+btn2.grid(row=0, column=1, columnspan=1, rowspan=1, sticky='EWNS')
+btn3.grid(row=0, column=2, columnspan=1, rowspan=1, sticky='EWNS')
+btn4.grid(row=1, column=0, columnspan=1, rowspan=1, sticky='EWNS')
+btn5.grid(row=1, column=1, columnspan=1, rowspan=1, sticky='EWNS')
+btn6.grid(row=1, column=2, columnspan=1, rowspan=1, sticky='EWNS')
 
 win.mainloop()
 
