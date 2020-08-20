@@ -19,11 +19,15 @@ my_button.pack()
 my_checkbutton = ttk.Checkbutton(win, text='同意')
 my_checkbutton.pack()
 
+# 窗框 Frame
+my_frame = ttk.Frame(win)
+my_frame.pack()
+
 # 按鈕 RadioButton
-m_radiobutton = ttk.Radiobutton(win, text="男", value=1)
-f_radiobutton = ttk.Radiobutton(win, text="女", value=2)
-m_radiobutton.pack()
-f_radiobutton.pack()
+m_radiobutton = ttk.Radiobutton(my_frame, text="男", value=1)
+f_radiobutton = ttk.Radiobutton(my_frame, text="女", value=2)
+m_radiobutton.pack(side=tkinter.LEFT)
+f_radiobutton.pack(side=tkinter.LEFT)
 
 # 輸入框
 my_entry = ttk.Entry(win)
