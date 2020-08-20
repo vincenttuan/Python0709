@@ -1,6 +1,12 @@
 import tkinter
 import tkinter.ttk as ttk
 
+def ctof():
+    pass
+
+def ftoc():
+    pass
+
 # GUI 視窗
 win = tkinter.Tk()
 win.title('攝氏華氏轉換') # 視窗標頭
@@ -23,8 +29,9 @@ my_label_f = ttk.Label(my_frame_f, text='華氏', font=('Arial', 15))
 my_entry_c = ttk.Entry(my_frame_c, font=('Arial', 15))
 my_entry_f = ttk.Entry(my_frame_f, font=('Arial', 15))
 # 按鈕 Button
-my_button_c = ttk.Button(my_frame_c, text='轉換', style='My.TButton')
-my_button_f = ttk.Button(my_frame_f, text='轉換', style='My.TButton')
+my_button_c = ttk.Button(my_frame_c, text='轉換', style='My.TButton', command=ctof)
+my_button_f = ttk.Button(my_frame_f, text='轉換', style='My.TButton', command=ftoc)
+
 # 元件配置
 my_label_c.pack(side=tkinter.LEFT)
 my_entry_c.pack(side=tkinter.LEFT)
