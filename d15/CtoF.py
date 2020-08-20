@@ -2,13 +2,16 @@ import tkinter
 import tkinter.ttk as ttk
 
 def ctof():
-    c = int(my_entry_c.get())
+    c = float(my_entry_c.get())
     f = c * 9/5 + 32
     f_value.set(f)
     print(c, type(c), f)
 
 def ftoc():
-    print('按下 ftoc')
+    f = float(my_entry_f.get())
+    c = (f-32) * 5/9
+    c_value.set(c)
+    print(f, type(f), c)
 
 # GUI 視窗
 win = tkinter.Tk()
