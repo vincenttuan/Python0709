@@ -2,7 +2,10 @@ import tkinter
 import tkinter.ttk as ttk
 
 def ctof():
-    print('按下 ctof')
+    c = int(my_entry_c.get())
+    f = c * 9/5 + 32
+    f_value.set(f)
+    print(c, type(c), f)
 
 def ftoc():
     print('按下 ftoc')
@@ -26,8 +29,12 @@ my_frame_f.pack()
 my_label_c = ttk.Label(my_frame_c, text='攝氏', font=('Arial', 15))
 my_label_f = ttk.Label(my_frame_f, text='華氏', font=('Arial', 15))
 # 輸入框
-my_entry_c = ttk.Entry(my_frame_c, font=('Arial', 15))
-my_entry_f = ttk.Entry(my_frame_f, font=('Arial', 15))
+c_value = tkinter.DoubleVar() # 建立變數
+c_value.set(0)
+f_value = tkinter.DoubleVar()
+f_value.set(0)
+my_entry_c = ttk.Entry(my_frame_c, textvariable=c_value, font=('Arial', 15))
+my_entry_f = ttk.Entry(my_frame_f, textvariable=f_value, font=('Arial', 15))
 # 按鈕 Button
 my_button_c = ttk.Button(my_frame_c, text='轉換', style='My.TButton', command=ctof)
 my_button_f = ttk.Button(my_frame_f, text='轉換', style='My.TButton', command=ftoc)
