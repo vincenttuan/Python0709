@@ -2,10 +2,10 @@ import tkinter
 import tkinter.ttk as ttk
 
 def ctof():
-    pass
+    print('按下 ctof')
 
 def ftoc():
-    pass
+    print('按下 ftoc')
 
 # GUI 視窗
 win = tkinter.Tk()
