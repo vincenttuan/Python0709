@@ -6,13 +6,16 @@ win = tkinter.Tk()
 win.title('GUI 元件視窗') # 視窗標頭
 win.geometry("300x300")  # 視窗大小
 
+s = ttk.Style()
+s.configure('My.TButton', font=('Arial', 15))
+
 # GUI 元件配置
 # 標籤 Label
-my_label = ttk.Label(win, text='我是標籤')
+my_label = ttk.Label(win, text='我是標籤', font=('Arial', 15))
 my_label.pack()  # 放置元件
 
 # 按鈕 Button
-my_button = ttk.Button(win, text='我是按鈕')
+my_button = ttk.Button(win, text='我是按鈕', style='My.TButton')
 my_button.pack()
 
 # 按鈕 CheckButton
@@ -30,12 +33,12 @@ m_radiobutton.pack(side=tkinter.LEFT)
 f_radiobutton.pack(side=tkinter.LEFT)
 
 # 輸入框
-my_entry = ttk.Entry(win)
+my_entry = ttk.Entry(win, font=('Arial', 15))
 my_entry.pack()
 
 # 下拉選單
 values = ['Python', 'Java', 'VB']
-my_combobox = ttk.Combobox(win, value=values)
+my_combobox = ttk.Combobox(win, value=values, font=('Arial', 15))
 my_combobox.pack()
 
 win.mainloop() # 視窗運行
