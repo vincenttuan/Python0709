@@ -88,7 +88,12 @@ def updateRecord():
         print('修改性別成功!')
 
 def deleteRecord():
-    pass
+    id = int(input('請輸入要刪除的 id 號碼:'))
+    sql = 'DELETE FROM student WHERE id=%d' % (id)
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    conn.commit()
+    print(id, ' 紀錄刪除成功!')
 
 if __name__ == '__main__':
     menu()
