@@ -33,6 +33,14 @@ def choice(n):
         deleteRecord()
 
 def createTable():
+    sql = 'CREATE TABLE "student" ('\
+	      '"id" INTEGER,'\
+	      '"name"	TEXT NOT NULL,'\
+	      '"age"	INTEGER NOT NULL,'\
+	      '"sex"	INTEGER NOT NULL,'\
+	      '"memo"	TEXT,'\
+	      'PRIMARY KEY("id" AUTOINCREMENT)'\
+          ')'
     pass
 
 def insertRecord():
