@@ -1,4 +1,5 @@
 import sqlite3
+import sys
 
 conn = sqlite3.connect('school.db')
 
@@ -16,6 +17,8 @@ def menu():
         return
     else:
         choice(n)
+    print('按下 enter 鍵繼續 ...')
+    sys.stdin.read(1) # read(1) -> \n, read(2) -> \n\r
     menu()
 
 def choice(n):
@@ -49,6 +52,16 @@ def insertRecord():
 
 def select(sql):
     cursor = conn.cursor()
+
+    # 表格欄位名稱(Table Meta-info)
+    cursor.execute('PRAGMA TABLE_INFO({})'.format('student'))
+    metainfo = cursor.fetchall()
+    names = [t[1] for t in metainfo]  # id, n1, n3 ....
+    for name in names:
+        print(name, end='\t')
+
+    print('\n-----------------------------------------------')
+
     cursor.execute(sql)
     rows = cursor.fetchall()
     for row in rows:
