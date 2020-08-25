@@ -47,8 +47,7 @@ def insertRecord():
     print('新增成功, id=', cursor.lastrowid)
     conn.commit()
 
-def selectAllRecords():
-    sql = "SELECT id, name, age, sex, ts FROM student"
+def select(sql):
     cursor = conn.cursor()
     cursor.execute(sql)
     rows = cursor.fetchall()
@@ -57,16 +56,14 @@ def selectAllRecords():
             print(row[i], end='\t')
         print()
 
+def selectAllRecords():
+    sql = "SELECT id, name, age, sex, ts FROM student"
+    select(sql)
+
 def selectRecord():
     name = input('請輸入要查詢的人名:')
     sql = "SELECT id, name, age, sex, ts FROM student WHERE name='%s'" % (name)
-    cursor = conn.cursor()
-    cursor.execute(sql)
-    rows = cursor.fetchall()
-    for row in rows:
-        for i in range(5):
-            print(row[i], end='\t')
-        print()
+    select(sql)
 
 def updateRecord():
     id = int(input('請輸入要修改的 id 號碼:'))
