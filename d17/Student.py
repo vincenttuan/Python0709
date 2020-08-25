@@ -58,7 +58,15 @@ def selectAllRecords():
         print()
 
 def selectRecord():
-    pass
+    name = input('請輸入要查詢的人名:')
+    sql = "SELECT id, name, age, sex, ts FROM student WHERE name='%s'" % (name)
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    rows = cursor.fetchall()
+    for row in rows:
+        for i in range(5):
+            print(row[i], end='\t')
+        print()
 
 def updateRecord():
     id = int(input('請輸入要修改的 id 號碼:'))
