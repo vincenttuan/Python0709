@@ -78,7 +78,14 @@ def updateRecord():
         cursor.execute(sql)
         conn.commit()
         print('修改年齡成功!')
-
+    flag = input('是否要修改性別(y/n)?')
+    if flag == 'y':
+        sex = int(input('請輸入性別(1:男, 2:女):'))
+        sql = 'UPDATE student SET sex=%d WHERE id=%d' % (sex, id)
+        cursor = conn.cursor()
+        cursor.execute(sql)
+        conn.commit()
+        print('修改性別成功!')
 
 def deleteRecord():
     pass
