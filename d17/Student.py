@@ -61,7 +61,24 @@ def selectRecord():
     pass
 
 def updateRecord():
-    pass
+    id = int(input('請輸入要修改的 id 號碼:'))
+    flag = input('是否要修改姓名(y/n)?')
+    if flag == 'y':
+        name = input('請輸入姓名:')
+        sql = 'UPDATE student SET name="%s" WHERE id=%d' % (name, id)
+        cursor = conn.cursor()
+        cursor.execute(sql)
+        conn.commit()
+        print('修改姓名成功!')
+    flag = input('是否要修改年齡(y/n)?')
+    if flag == 'y':
+        age = int(input('請輸入年齡:'))
+        sql = 'UPDATE student SET age=%d WHERE id=%d' % (age, id)
+        cursor = conn.cursor()
+        cursor.execute(sql)
+        conn.commit()
+        print('修改年齡成功!')
+
 
 def deleteRecord():
     pass
