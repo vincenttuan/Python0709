@@ -1,3 +1,6 @@
+import sqlite3
+
+conn = sqlite3.connect('school.db')
 
 def menu():
     print('1.建立表單')
@@ -49,3 +52,4 @@ def deleteRecord():
 
 if __name__ == '__main__':
     menu()
+    conn.close()
