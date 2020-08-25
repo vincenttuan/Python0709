@@ -33,15 +33,17 @@ def choice(n):
         deleteRecord()
 
 def createTable():
-    sql = 'CREATE TABLE "student" ('\
+    sql = 'CREATE TABLE if not exists "student" ('\
 	      '"id" INTEGER,'\
-	      '"name"	TEXT NOT NULL,'\
-	      '"age"	INTEGER NOT NULL,'\
-	      '"sex"	INTEGER NOT NULL,'\
-	      '"memo"	TEXT,'\
+	      '"name" TEXT NOT NULL,'\
+	      '"age" INTEGER NOT NULL,'\
+	      '"sex" INTEGER NOT NULL,'\
+	      '"ts" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,'\
 	      'PRIMARY KEY("id" AUTOINCREMENT)'\
           ')'
-    pass
+    conn.execute(sql)
+    conn.commit()
+    print('資料表建立成功!')
 
 def insertRecord():
     pass
