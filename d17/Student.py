@@ -34,13 +34,18 @@ def choice(n):
 
 def createTable():
     sql = open('data.sql', 'r').read()
-    print(sql)
     conn.execute(sql)
     conn.commit()
     print('資料表建立成功!')
 
 def insertRecord():
-    pass
+    name = input('請輸入姓名:')
+    age = int(input('請輸入年齡:'))
+    sex = int(input('請輸入性別(1:男, 2:女):'))
+    sql = 'INSERT INTO student(name, age, sex) VALUES("%s", %d, %d)' % (name, age, sex)
+    cursor = conn.execute(sql)
+    print('新增成功, id=', cursor.lastrowid)
+    conn.commit()
 
 def selectAllRecords():
     pass
