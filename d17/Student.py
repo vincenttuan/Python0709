@@ -48,7 +48,14 @@ def insertRecord():
     conn.commit()
 
 def selectAllRecords():
-    pass
+    sql = "SELECT id, name, age, sex, ts FROM student"
+    cursor = conn.cursor()
+    cursor.execute(sql)
+    rows = cursor.fetchall()
+    for row in rows:
+        for i in range(5):
+            print(row[i], end='\t')
+        print()
 
 def selectRecord():
     pass
