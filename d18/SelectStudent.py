@@ -9,9 +9,9 @@ print('------------------------')
 sql = 'SELECT b.id, b.h, b.w, ROUND(b.w / ((b.h / 100)*(b.h / 100)), 2) AS bmi, s.name '\
       'FROM student as s, bmi as b '\
       'WHERE s.id = b.sid '\
-      'ORDER BY bmi'
+      'ORDER BY bmi DESC'
 
 cursor.execute(sql)
 rows = cursor.fetchall()
 for row in rows:
-    print(row[0], row[1], row[2], row[4], row[4])
+    print(row[0], row[1], row[2], row[3], row[4])
