@@ -22,14 +22,14 @@ def query():
 
 win = tkinter.Tk()
 
-entry = tkinter.Entry(win, justify=tkinter.CENTER)
-entry.pack()
-
-addButton = tkinter.Button(win, text='新增', command=add)
-addButton.pack()
-
-queryButton = tkinter.Button(win, text='查詢', command=query)
-queryButton.pack()
+my_frame = ttk.Frame(win)
+my_frame.pack()
+entry = tkinter.Entry(my_frame, justify=tkinter.CENTER)
+addButton = tkinter.Button(my_frame, text='新增', command=add)
+queryButton = tkinter.Button(my_frame, text='查詢', command=query)
+entry.pack(side=tkinter.LEFT)
+addButton.pack(side=tkinter.LEFT)
+queryButton.pack(side=tkinter.LEFT)
 
 tree = ttk.Treeview(win, columns=['1', '2'], show='headings') # 表格
 tree.heading('1', text='序號')
