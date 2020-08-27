@@ -3,6 +3,9 @@ import sqlite3
 conn = sqlite3.connect('student.db')
 cursor = conn.cursor()
 
+print('序號', '身高', '體重', 'BMI', '姓名')
+print('------------------------')
+
 sql = 'SELECT b.id, b.h, b.w, ROUND(b.w / ((b.h / 100)*(b.h / 100)), 2) AS bmi, s.name '\
       'FROM student as s, bmi as b '\
       'WHERE s.id = b.sid '\
