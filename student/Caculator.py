@@ -24,7 +24,6 @@ def back():
         a = a[:len(a) - 3]
     else:
         pos = a[len(a) - 1]
-        print(pos)
         if pos == '.':
             global isPoint
             isPoint = False
@@ -32,7 +31,7 @@ def back():
     ans.set(a)
 
 
-# ===================================number=====================================
+# ====================================number=====================================
 
 
 def checkEqual():
@@ -43,7 +42,7 @@ def checkEqual():
 
 
 def checkZero():
-    if len(ans.get()) == 0:
+    if len(ans.get()) == 0 or isPoint:
         return True
     if not ans.get().__contains__(" "):
         if ans.get()[0] == '0':
@@ -57,7 +56,7 @@ def checkZero():
     a = ans.get()[i + 1:]
 
     def checkagain(a):
-        if len(a) == 0:
+        if len(a) == 0 or isPoint:
             return True
         if a[0] == '0':
             return "replace"
@@ -84,14 +83,12 @@ def m0():
     a = ans.get()[i + 1:]
 
     def m0_1(a):
-        if len(a) == 1:
+        if len(a.replace(' ', '')) == 0:
             a = a + "0"
             return a
-        a.replace(' ', '')
-        if a[1] != '0' or isPoint:
+        if a.replace(' ', '')[0] != '0' or isPoint:
             a = a + "0"
             return a
-
     if m0_1(a) is None:
         return
     ans.set(ans.get()[:i + 1] + m0_1(a))
@@ -215,7 +212,7 @@ def checkSymbol():
     elif a[len(a) - 1] == '.':
         ans.set(a + "0")
         return True
-    elif not a[len(a) - 2].isdigit() and a[len(a) - 2] != '.':
+    elif not a[len(a) - 2].isdigit() and a[len(a) - 2] != '.' and a[len(a) - 2] != ' ':
         return "replace"
     else:
         return True
@@ -231,8 +228,10 @@ def add():
     global isPoint
     symbol = checkSymbol()
     if symbol is None:
+        print("none")
         ans.set("")
     elif symbol == 'replace':
+        print("replace")
         ans.set(ans.get()[:len(ans.get()) - 3] + " + ")
     else:
         ans.set(ans.get() + " + ")
